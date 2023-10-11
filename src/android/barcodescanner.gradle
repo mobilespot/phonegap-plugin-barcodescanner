@@ -1,17 +1,15 @@
 repositories{
-    mavenCentral()
+    jcenter()
+    flatDir{
+        dirs 'libs'
+    }
 }
 
 dependencies {
-    implementation(name:'barcodescanner-release-2.1.5', ext:'aar')
+    compile(name:'barcodescanner-release-2.1.5', ext:'aar')
 }
 
 android {
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-  }
     packagingOptions {
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/LICENSE'
